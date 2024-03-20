@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <h1 class="waktu" id="time"></h1>
+    <h2 class="tanggal" id="date"></h2>
+    <section>
+      <form>
+        <h1>Perkenalan</h1>
+        <div class="inputbox">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input type="text" id="name" required />
+          <label for="name">Nama</label>
+        </div>
+        <div class="inputbox">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="text" id="asal" required />
+          <label for="asal">Asal</label>
+        </div>
+        <button type="submit" onclick="show()">Check</button>
+        <div class="paragraf">
+          <p>
+            Form ini berguna untuk perkenalan antara kita berdua saja yaa...
+          </p>
+        </div>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+      function updateTime() {
+        var now = new Date();
+        var days = [
+          "Minggu",
+          "Senin",
+          "Selasa",
+          "Rabu",
+          "Kamis",
+          "Jumat",
+          "Sabtu",
+        ];
+        var months = [
+          "Januari",
+          "Februari",
+          "Maret",
+          "April",
+          "Mei",
+          "Juni",
+          "Juli",
+          "Agustus",
+          "September",
+          "Oktober",
+          "November",
+          "Desember",
+        ];
+
+        var day = days[now.getDay()];
+        var date = now.getDate();
+        var month = months[now.getMonth()];
+        var year = now.getFullYear();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        // Format waktu dan tanggal
+        var timeString =
+          addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
+        var dateString = day + ", " + date + " " + month + " " + year;
+
+        // Update elemen HTML dengan waktu dan tanggal yang baru
+        document.getElementById("time").innerHTML = timeString;
+        document.getElementById("date").innerHTML = dateString;
+
+        // Panggil fungsi updateTime setiap detik (1000 milidetik)
+        setTimeout(updateTime, 1000);
+      }
+
+      // Fungsi untuk menambahkan nol di depan angka jika kurang dari 10
+      function addZero(num) {
+        return (num < 10 ? "0" : "") + num;
+      }
+
+      // Panggil fungsi updateTime untuk pertama kali
+      updateTime();
+    </script>
+  </body>
+</html>

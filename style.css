@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", "sans-serif";
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(gambar.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+  position: relative;
+  max-width: 800px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(30px);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 3rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.waktu {
+  position: fixed; /* Menggunakan posisi tetap untuk tetap menjaga elemen di atas */
+  top: 1px; /* Menentukan jarak dari atas */
+  left: 50%; /* Mengatur elemen di tengah */
+  transform: translateX(-50%); /* Untuk menengahkan elemen secara horizontal */
+  padding: 20px; /* Menambahkan padding agar lebih terlihat */
+  border-radius: 5px; /* Memberikan sudut elemen */
+  z-index: 999; /* Menempatkan elemen di atas elemen lain */
+}
+
+.tanggal {
+  position: fixed; /* Menggunakan posisi tetap untuk tetap menjaga elemen di atas */
+  color: #fff;
+  top: 35px; /* Menentukan jarak dari atas */
+  left: 50%; /* Mengatur elemen di tengah */
+  transform: translateX(-50%); /* Untuk menengahkan elemen secara horizontal */
+  padding: 20px; /* Menambahkan padding agar lebih terlihat */
+  border-radius: 5px; /* Memberikan sudut elemen */
+  z-index: 999; /* Menempatkan elemen di atas elemen lain */
+}
+
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  max-width: 500px;
+  border-bottom: 1px solid #fff;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.5 ease-in-out;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -5px;
+}
+
+.inputbox input {
+  width: 100%;
+  height: 60px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 35px 0 5px;
+  color: #fff;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2rem;
+  top: 20px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background-color: rgb(255, 255, 255, 1);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255, 0, 5);
+}
+
+.paragraf {
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  margin: 25px 0 10px;
+  align-items: center;
+}
